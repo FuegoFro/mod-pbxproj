@@ -45,6 +45,7 @@ class PBXBuildFile(PBXGenericObject):
         objects = self.get_parent()
         target = self.get_id()
 
+        # TODO: to be revisited to avoid the patch to make the state always consistent and avoid recalculation
         def fill_cache_during_save(cache):
             for section in objects.get_sections():
                 for obj in objects.get_objects_in_section(section):

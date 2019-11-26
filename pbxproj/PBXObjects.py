@@ -61,6 +61,7 @@ class objects(PBXGenericObject):
         return sections
 
     def __getitem__(self, key):
+        # TODO: to be revisited to avoid the patch to make the state always consistent and avoid recalculation
         def fill_cache_during_save(cache):
             for section in self.get_sections():
                 phase = self._sections[section]
